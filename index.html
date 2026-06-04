@@ -390,6 +390,12 @@
 				transform: scale(3.5);
 			}
 		}
+
+		@media (max-width: 1023px) {
+			.cursor-glow {
+				display: none !important;
+			}
+		}
 	</style>
 </head>
 
@@ -469,7 +475,7 @@
 	</div>
 	<main class="min-h-screen relative overflow-x-hidden">
 		<div class="scroll-progress" style="width:0%"></div>
-		<div class="cursor-glow hidden md:block" style="left:-500px;top:-500px"></div>
+		<div class="cursor-glow hidden lg:block" style="left:-500px;top:-500px"></div>
 		<header
 			class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6 bg-transparent border-transparent">
 			<nav class="container flex items-center justify-between gap-8"><a href="#home"
@@ -1835,6 +1841,7 @@
 			const cursorGlow = document.querySelector('.cursor-glow');
 			if (cursorGlow) {
 				document.addEventListener('mousemove', (e) => {
+					if (window.innerWidth < 1024) return;
 					cursorGlow.style.left = `${e.clientX - 250}px`;
 					cursorGlow.style.top = `${e.clientY - 250}px`;
 					cursorGlow.style.opacity = '1';
