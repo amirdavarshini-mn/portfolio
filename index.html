@@ -347,6 +347,27 @@
 		.particle {
 			position: absolute !important;
 		}
+
+		.opportunity-dot {
+			background-color: #00e676 !important;
+			box-shadow: 0 0 10px #00e676, 0 0 20px rgba(0, 230, 118, 0.4) !important;
+		}
+
+		.opportunity-glow {
+			background-color: #00e676 !important;
+			animation: 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite opportunity-pulse !important;
+		}
+
+		@keyframes opportunity-pulse {
+			0% {
+				opacity: 0.8;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				transform: scale(3.5);
+			}
+		}
 	</style>
 </head>
 
@@ -517,10 +538,10 @@
 				style="animation-delay:-4s"></div>
 			<div class="container grid lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-center">
 				<div>
-					<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/40 mb-8 animate-slide-up hover-glow-border cursor-default"
-						style="animation-delay:0ms"><span class="relative flex h-2 w-2"><span
-								class="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-accent opacity-90"></span><span
-								class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span><span
+					<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-border bg-card/40 mb-8 animate-slide-up hover-glow-border cursor-default"
+						style="animation-delay:0ms"><span class="relative flex h-3 w-3"><span
+								class="opportunity-glow absolute inline-flex h-full w-full rounded-full"></span><span
+								class="relative inline-flex rounded-full h-3 w-3 opportunity-dot"></span></span><span
 							class="text-xs text-slate-200">Open to Full Stack Developer opportunities</span></div>
 					<p class="font-mono text-white mb-6 uppercase animate-slide-up"
 						style="animation-delay:0.2s; font-size: 0.7rem; letter-spacing: 0.3em;"><span
