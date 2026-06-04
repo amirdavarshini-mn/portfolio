@@ -344,6 +344,9 @@
 				overflow-x: hidden !important;
 			}
 		}
+		.particle {
+			position: absolute !important;
+		}
 	</style>
 </head>
 
@@ -471,7 +474,7 @@
 			</div>
 		</header>
 		<section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28">
-			<div id="home-particles-container" class="absolute inset-0 pointer-events-none z-0 overflow-visible">
+			<div id="home-particles-container" class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
 				<div class="particle"
 					style="left:12.274630213264015%;bottom:-10px;width:3.269890053113842px;height:3.269890053113842px;opacity:0.300637164572712;animation:particle-float 16.791637863919203s linear 8.207789511508224s infinite">
 				</div>
@@ -649,7 +652,7 @@
 						<path d="m6 9 6 6 6-6"></path>
 					</svg></a></div>
 		</section>
-		<div class="overflow-hidden border-y border-border py-6 bg-card/20">
+		<div class="relative z-10 overflow-hidden border-y border-border py-6 bg-background">
 			<div class="marquee font-mono-tag text-muted-foreground">
 				<div class="flex items-center gap-8 pr-8"><span
 						class="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1"><span>.NET
@@ -1962,7 +1965,7 @@
 					if (!spanNum) return;
 
 					let count = 0;
-					const speed = Math.max(20, Math.floor(1000 / target));
+					const speed = Math.max(30, Math.floor(2500 / target));
 					const timer = setInterval(() => {
 						count++;
 						spanNum.textContent = count;
