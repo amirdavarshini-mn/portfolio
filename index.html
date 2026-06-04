@@ -3,7 +3,7 @@
 
 <head>
 	<meta charSet="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 	<link rel="preload" as="image" href="assets/profile-CTxL4GyG.png" />
 	<link rel="stylesheet" href="assets/styles-CukRD3bJ.css" data-precedence="default" />
 	<link rel="stylesheet"
@@ -443,7 +443,7 @@
 					<div class="w-5 h-0.5 bg-foreground transition-transform duration-300 "></div>
 				</button>
 			</nav>
-			<div class="lg:hidden overflow-hidden transition-all duration-500 ease-out max-h-0 opacity-0">
+			<div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-500 ease-out max-h-0 opacity-0">
 				<div class="mx-4 rounded-2xl glass-card p-6 flex flex-col gap-4"><a href="#home"
 						class="text-muted-foreground hover:text-foreground hover:translate-x-2 transition-all duration-300 "
 						style="animation-delay:0ms">Home</a><a href="#about"
@@ -2038,7 +2038,7 @@
 			   Mobile Navigation Toggle & Burger Transforms
 			   ========================================== */
 			const toggleButton = document.querySelector('header button[aria-label="Toggle menu"]');
-			const mobileMenuContainer = document.querySelector('header .lg\\:hidden');
+			const mobileMenuContainer = document.getElementById('mobile-menu');
 			if (toggleButton && mobileMenuContainer) {
 				toggleButton.addEventListener('click', (e) => {
 					e.preventDefault();
