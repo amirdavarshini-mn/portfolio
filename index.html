@@ -333,6 +333,17 @@
 				left: 150%;
 			}
 		}
+
+		html, body {
+			overflow-x: clip !important;
+			max-width: 100% !important;
+			width: 100% !important;
+		}
+		@supports not (overflow-x: clip) {
+			html, body {
+				overflow-x: hidden !important;
+			}
+		}
 	</style>
 </head>
 
@@ -410,7 +421,7 @@
 			}
 		</style>
 	</div>
-	<main class="min-h-screen relative">
+	<main class="min-h-screen relative overflow-x-hidden">
 		<div class="scroll-progress" style="width:0%"></div>
 		<div class="cursor-glow hidden md:block" style="left:-500px;top:-500px"></div>
 		<header
@@ -638,7 +649,7 @@
 						<path d="m6 9 6 6 6-6"></path>
 					</svg></a></div>
 		</section>
-		<div class="mt-20 overflow-hidden border-y border-border py-6 bg-card/20">
+		<div class="overflow-hidden border-y border-border py-6 bg-card/20">
 			<div class="marquee font-mono-tag text-muted-foreground">
 				<div class="flex items-center gap-8 pr-8"><span
 						class="flex items-center gap-8 whitespace-nowrap animate-shimmer rounded px-2 py-1"><span>.NET
